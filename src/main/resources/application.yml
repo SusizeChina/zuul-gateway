@@ -1,0 +1,19 @@
+# 应用名称
+spring:
+  application:
+    name: zuul-gateway
+zuul:
+  routes:
+    v1-producer:
+      path: /producer/v1/producer
+      serviceId: producer
+    v1-consumer:
+      path: /consumer/**
+      serviceId: consumer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+server:
+  port: 9001
+
